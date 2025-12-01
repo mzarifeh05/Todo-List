@@ -71,15 +71,17 @@ body {
     justify-content: space-between;
     width: 95%;
     gap: 20px;
+    flex-direction: column;
+    align-items: center;
 }
 
 .tasks,
 .completed-tasks {
-    width: 50%;
     background-color: #f1f9f1;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    width: 80%;
 }
 
 .tasks h2,
@@ -110,7 +112,7 @@ body {
 }
 
 .text {
-    max-width: 70%;
+    width: 70%;
 }
 
 .text h4 {
@@ -153,6 +155,15 @@ body {
     background-color: #b83030;
 }
 
+.buttons button:nth-child(3) {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+.buttons button:nth-child(3):hover {
+    background-color: rgb(50, 50, 50);
+}
+
 .completed-tasks ul li {
     background-color: #c8efcc;
 }
@@ -165,12 +176,18 @@ body {
     background-color: rgb(171, 231, 178) !important;
 }
 
-@media (max-width: 900px) {
-    .content .box {
-        flex-direction: column;
-    }
-    .content .box div {
+@media (max-width: 1100px) {
+    .content .box > div {
         width: 100%;
+    }
+    .content .box .tasks .text,
+    .content .box .completed-tasks .text  {
+        width: 80%;
+    }
+    .content .box .tasks .buttons,
+    .content .box .completed-tasks .buttons {
+        display: flex;
+        flex-direction: column;
     }
 }
 
