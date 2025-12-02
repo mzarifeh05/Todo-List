@@ -6,7 +6,7 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg, #7bb4b7, #9ccfd0);
+    background: linear-gradient(135deg, #7bb4b7, #9ccfd0, #bfe5e7);
 }
 
 .content {
@@ -41,7 +41,7 @@ body {
     padding: 12px;
     border-radius: 8px;
     border: 2px solid #d7e8d7;
-    background-color: rgb(236, 244, 232);
+    background-color: #ecf4e8;
     font-size: 1rem;
 }
 
@@ -101,7 +101,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: #dff5e1;
-    padding: 15px 20px;
+    padding: 18px 22px;
     border-radius: 10px;
     transition: 0.2s ease-in-out;
 }
@@ -122,8 +122,7 @@ body {
 
 .text p {
     font-size: 0.95rem;
-    opacity: 0.8;
-    justify-content: center;
+    opacity: 0.9;
 }
 
 .buttons button {
@@ -138,7 +137,7 @@ body {
 }
 
 .buttons button:nth-child(1) {
-        background-color: #3e8e41;
+    background-color: #3e8e41;
     color: white;
 }
 
@@ -156,16 +155,12 @@ body {
 }
 
 .buttons button:nth-child(3) {
-    background-color: gray;
+    background-color: #f0ad4e;
     color: white;
 }
 
 .buttons button:nth-child(3):hover {
-    background-color: rgb(84, 84, 84);
-}
-
-.completed-tasks ul li {
-    background-color: #c8efcc;
+    background-color: #cf8a32;
 }
 
 .content .box .tasks ul li {
@@ -173,7 +168,7 @@ body {
 }
 
 .content .box .completed-tasks ul li {
-    background-color: rgb(171, 231, 178) !important;
+    background-color: #a3ffac !important;
 }
 
 .completed-tasks .buttons button:nth-child(1) {
@@ -189,7 +184,7 @@ body {
         width: 100%;
     }
     .content .box .tasks .text,
-    .content .box .completed-tasks .text  {
+    .content .box .completed-tasks .text {
         width: 80%;
     }
     .content .box .tasks .buttons,

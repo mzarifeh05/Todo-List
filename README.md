@@ -1,4 +1,4 @@
 # Todo List App (React)
 
-A simple and clean Todo List application built with React Hooks.
-Users can add tasks with a name and description, mark tasks as completed, move them back to pending, and delete them from either list. The project demonstrates core React concepts such as state management, lifting state, updating arrays, and component rendering.
+A responsive Todo List application built using React and useState.
+Features include task creation, editing, deletion, completion management, and a clear separation between pending and completed tasks. The UI is designed to be simple, clean, and user-friendly.

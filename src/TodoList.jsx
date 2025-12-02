@@ -93,7 +93,14 @@ function TodoList() {
                             <div className="buttons">
                                 <button onClick={() => completeTask(Element.name, Element.desc)}>Done</button>
                                 <button onClick={() => deleteTask(Element.name)}>Delete</button>
-                                <button onClick={() => {setEditing(true); setOldName(Element.name)}}>Edit</button>
+                                <button 
+                                    onClick={() => {
+                                        setEditing(true);
+                                        setOldName(Element.name);
+                                        setName(Element.name);
+                                        setDesc(Element.desc);
+                                    }}>Edit
+                                </button>
                             </div>
                         </li>
                     })}
