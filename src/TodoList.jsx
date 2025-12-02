@@ -15,6 +15,9 @@ function TodoList() {
     const [name, setName] = useState("");
     const [desc, setDesc] = useState("");
 
+    const [oldName, setOldName] = useState("");
+    const [editing, setEditing] = useState(false);
+
 
     function addTask() {
         if (name && desc) {
@@ -44,6 +47,20 @@ function TodoList() {
         setCompletedTasks(updated);
     }
 
+    function edit() {
+        const edited =
+        tasks.map(Element => {
+            if (Element.name === oldName)
+                return {name: name, desc: desc};
+            else 
+                return Element;
+        });
+        setTasks(edited);
+        setEditing(false)
+        setName("")
+        setDesc("")
+    }
+
     return(
         <div className="content">
             <h1>Todo List</h1>
@@ -56,7 +73,12 @@ function TodoList() {
                 value={desc}
                 name="task-desc" id="task-desc" placeholder="Task Description"></textarea>
                 <br /><br />
-                <button onClick={addTask}>Add Task</button>
+                <button onClick={() => {
+                    if (!editing)
+                        addTask();
+                    else
+                        edit();
+                }}>{!editing? "Add Task" : "Edit"}</button>
             </div>
             <div className="box">
                 <div className="tasks">
@@ -71,6 +93,7 @@ function TodoList() {
                             <div className="buttons">
                                 <button onClick={() => completeTask(Element.name, Element.desc)}>Done</button>
                                 <button onClick={() => deleteTask(Element.name)}>Delete</button>
+                                <button onClick={() => {setEditing(true); setOldName(Element.name)}}>Edit</button>
                             </div>
                         </li>
                     })}
