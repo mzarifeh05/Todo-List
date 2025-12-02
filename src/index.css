@@ -197,6 +197,10 @@ body {
 @media (max-width: 550px) {
     .box ul li {
         flex-direction: column;
-        gap: 10px;
+        gap: 20px;
+    }
+    .content .box .tasks .buttons,
+    .content .box .completed-tasks .buttons {
+        flex-direction: row;
     }
 }
