@@ -3,13 +3,11 @@ import { useState } from "react";
 
 function TodoList() {
     const[tasks, setTasks] = useState([
-        {name: "Prepare Hackathon UI Draft", desc: "A first sketch of the landing page and dashboard. Try different color themes and button styles. Make sure it's responsive for mobile."},
-        {name: "Practice Lifting State Up in React - Mini Demo", desc: "Re-read the notes about lifting state up. Check Bro Code's examples again to confirm the flow. Create a small demo to test your understanding."},
+        {name: "", desc: ""},
     ])
 
     const [completedTask, setCompletedTasks] = useState([
-        {name: "Finish Components Refactor", desc: "Separated the UI into smaller components."},
-        {name: "Update Project README", desc: "Added installation steps and usage instructions."},
+        {name: "", desc: ""},
     ])
 
     const [name, setName] = useState("");
@@ -85,24 +83,25 @@ function TodoList() {
                 <h2>Tasks 🔜</h2>
                 <ul>
                     {tasks.map((Element, index) => {
-                        return <li key={index}>
-                            <div className="text">
-                                <h4>{Element.name}</h4>
-                                <p>{Element.desc}</p>
-                            </div>
-                            <div className="buttons">
-                                <button onClick={() => completeTask(Element.name, Element.desc)}>Done</button>
-                                <button onClick={() => deleteTask(Element.name)}>Delete</button>
-                                <button 
-                                    onClick={() => {
-                                        setEditing(true);
-                                        setOldName(Element.name);
-                                        setName(Element.name);
-                                        setDesc(Element.desc);
-                                    }}>Edit
-                                </button>
-                            </div>
-                        </li>
+                        if (Element.name && Element.desc)
+                            return <li key={index}>
+                                <div className="text">
+                                    <h4>{Element.name}</h4>
+                                    <p>{Element.desc}</p>
+                                </div>
+                                <div className="buttons">
+                                    <button onClick={() => completeTask(Element.name, Element.desc)}>Done</button>
+                                    <button onClick={() => deleteTask(Element.name)}>Delete</button>
+                                    <button 
+                                        onClick={() => {
+                                            setEditing(true);
+                                            setOldName(Element.name);
+                                            setName(Element.name);
+                                            setDesc(Element.desc);
+                                        }}>Edit
+                                    </button>
+                                </div>
+                            </li>
                     })}
                 </ul>
             </div>
@@ -110,16 +109,17 @@ function TodoList() {
                 <h2>Completed Tasks ✅</h2>
                 <ul>
                     {completedTask.map((Element, index) => {
-                        return <li key={index}>
-                            <div className="text">
-                                <h4>{Element.name}</h4>
-                                <p>{Element.desc}</p>
-                            </div>
-                            <div className="buttons">
-                                <button onClick={() => uncompleteTask(Element.name, Element.desc)}>Uncomplete</button>
-                                <button onClick={() => deleteCompletedTask(Element.name)}>Delete</button>
-                            </div>
-                        </li>
+                        if (Element.name && Element.desc)
+                            return <li key={index}>
+                                <div className="text">
+                                    <h4>{Element.name}</h4>
+                                    <p>{Element.desc}</p>
+                                </div>
+                                <div className="buttons">
+                                    <button onClick={() => uncompleteTask(Element.name, Element.desc)}>Uncomplete</button>
+                                    <button onClick={() => deleteCompletedTask(Element.name)}>Delete</button>
+                                </div>
+                            </li>
                     })}
                 </ul>
             </div>
